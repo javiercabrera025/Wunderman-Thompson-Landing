@@ -1,0 +1,607 @@
+/*CSS externo*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css');
+
+/*Colores*/
+
+$dark: #000000;
+$white: #ffffff;
+$darkgrey: #4d4d4d;
+$grey: #858585;
+$lightgrey: #d2d2d2;
+$skyblue: #4da6e4;
+$danger: #dc3545;
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: $dark;
+}
+
+/*General*/
+
+.container {
+    display: flex;
+    max-width: 1280px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/*Navbar*/
+
+header.nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    background-color: $dark;
+
+    .navbar {
+        justify-content: space-between;
+        width: 100%;
+
+        .brand {
+            display: flex;
+            align-items: center;
+            color: $white;
+            font-size: 24px;
+            font-weight: 300;
+            text-decoration: none;
+        }
+
+        .social {
+            display: flex;
+            align-items: center;
+            color: $white;
+
+            span {
+                margin-right: 10px;
+                color: $darkgrey;
+                text-transform: uppercase;
+
+                @media (max-width: 600px) {
+                    display: none;
+                }
+            }
+
+            a {
+                width: 36px;
+                height: 36px;
+            }
+
+        }
+    }
+}
+
+/*Sección Slider*/
+
+.slider {
+    &:focus {
+        border: none;
+    }
+
+    max-width: 1280px;
+    height: 420px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $lightgrey;
+
+    @media (max-width: 900px) {
+        height: 330px;
+    }
+
+    .slide {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        height: 500px;
+
+        &.slide-3 {
+            .mancha {
+                img {
+                    top: -150px;
+                    right: 107px;
+
+                    @media (max-width: 900px) {
+                        top: -60px;
+                        right: -20px;
+                    }
+
+                    @media (max-width: 600px) {
+                        top: 0;
+                        right: -20px;
+                    }
+                }
+
+                .precio {
+                    top: 120px;
+                    right: 30px;
+                }
+            }
+
+        }
+
+        @media (max-width: 900px) {
+            height: 400px;
+        }
+
+        .content {
+            z-index: 10;
+            width: 50%;
+            padding: 40px 0 0 120px;
+
+            @media (max-width: 760px) {
+                padding: 40px 0 0 65px;
+            }
+
+            @media (max-width: 600px) {
+                padding: 30px 0 0 20px;
+            }
+
+            .product {
+                display: block;
+                margin-left: 15px;
+                margin-bottom: -25px;
+                font-size: 42px;
+                font-weight: 300;
+                color: $grey;
+                text-transform: uppercase;
+
+                @media (max-width: 900px) {
+                    font-size: 30px;
+                }
+
+                @media (max-width: 600px) {
+                    font-size: 18px;
+                    margin-bottom: -10px;
+                }
+            }
+
+            .numero {
+                display: block;
+                margin-bottom: 30px;
+                font-size: 170px;
+                font-weight: 900;
+                color: #a2a2a2;
+                text-transform: uppercase;
+
+                @media (max-width: 900px) {
+                    font-size: 120px;
+                }
+
+                @media (max-width: 600px) {
+                    font-size: 65px;
+                    margin-bottom: 130px;
+                }
+            }
+
+            .btn-comprar {
+                padding: 30px 90px;
+                color: $white;
+                background-color: $skyblue;
+                font-size: 28px;
+                text-decoration: none;
+                border-radius: 10px;
+                letter-spacing: 5px;
+                text-transform: uppercase;
+
+                @media (max-width: 900px) {
+                    font-size: 20px;
+                    padding: 20px 40px;
+                }
+
+                @media (max-width: 600px) {
+                    font-size: 17px;
+                    padding: 15px 40px;
+                }
+            }
+        }
+
+        .mancha {
+            position: relative;
+            width: 50%;
+
+            .precio {
+                position: absolute;
+                top: 120px;
+                left: 45px;
+                z-index: 5;
+
+                @media (max-width: 900px) {
+                    top: 60px;
+                    left: 0px;
+                }
+
+                @media (max-width: 600px) {
+                    top: 95px;
+                    right: 40px;
+                    left: auto;
+                }
+
+                .signo {
+                    display: block;
+                    font-size: 41px;
+                    font-weight: 800;
+                    color: $white;
+
+                    @media (max-width: 600px) {
+                        font-size: 20px;
+                    }
+                }
+
+                .wrapper {
+                    display: flex;
+
+                    .numero {
+                        margin-top: -25px;
+                        font-weight: 800;
+                        font-size: 140px;
+                        color: $white;
+
+                        @media (max-width: 900px) {
+                            font-size: 120px;
+                        }
+
+                        @media (max-width: 600px) {
+                            font-size: 65px;
+                            margin-top: -10px;
+                        }
+                    }
+
+                    .centavos {
+                        margin-top: 8px;
+                        margin-left: 6px;
+                        font-size: 35px;
+                        font-weight: 800;
+                        color: $white;
+                        line-height: 1.5;
+
+                        @media (max-width: 600px) {
+                            font-size: 15px;
+                            margin-top: 5px;
+                            width: 40px;
+                        }
+                    }
+                }
+            }
+
+            img {
+                position: absolute;
+                width: 750px;
+                transform: rotate(-50deg);
+                top: -95px;
+                right: 50px;
+
+                @media (max-width: 1200px) {
+                    right: 0px;
+                }
+
+                @media (max-width: 1100px) {
+                    right: -80px;
+                }
+
+                @media (max-width: 900px) {
+                    right: 0;
+                    top: -60px;
+                    width: 500px;
+                }
+
+                @media (max-width: 600px) {
+                    right: -65px;
+                    top: 0;
+                    width: 350px;
+                }
+            }
+        }
+    }
+
+    .slick-next.slick-arrow {
+        right: 10px;
+        z-index: 10;
+        background: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+
+        @media (max-width: 600px) {
+            display: none !important;
+        }
+    }
+
+    .slick-prev {
+        left: 10px;
+        z-index: 10;
+        background: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+
+        @media (max-width: 600px) {
+            display: none !important;
+        }
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+        font-family: "FontAwesome";
+        font-size: 35px;
+        font-weight: 300;
+        line-height: 0.5;
+        color: #4da6e4;
+        opacity: 1;
+    }
+
+    .slick-next:before {
+        content: "\f054 ";
+        margin-left: 7px;
+    }
+
+    .slick-prev:before {
+        content: "\f053 ";
+        margin-right: 7px;
+    }
+}
+
+/*Sección Artículos*/
+
+#articulos {
+    padding-top: 55px;
+
+    .container {
+        flex-direction: column;
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            & .col:nth-child(2n) {
+                margin-top: 30px;
+
+                @media (max-width: 600px) {
+                    margin-top: 0px;
+                }
+            }
+        }
+
+        .col {
+            flex: 0 0 23%;
+            max-width: 23%;
+            padding: 0 10px;
+
+            @media (max-width: 1200px) {
+                flex: 0 0 30%;
+                max-width: 30%;
+            }
+
+            @media (max-width: 990px) {
+                flex: 0 0 45%;
+                max-width: 45%;
+            }
+
+            @media (max-width: 600px) {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+        }
+
+        h2 {
+            margin-bottom: 1.5rem;
+            font-size: 42px;
+            font-weight: 300;
+
+            @media (max-width: 600px) {
+                font-size: 32px;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: $dark;
+        }
+
+        article.producto {
+            height: 450px;
+            margin-bottom: 35px;
+            border: 1px solid #cccccc;
+            border-radius: 10px;
+            box-shadow: 0 3px #ddd;
+
+            figure.imagen-producto {
+                height: 215px;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    max-width: 100%;
+                }
+            }
+
+            .texto-producto {
+                padding: 20px;
+
+                h3 {
+                    margin-bottom: 1rem;
+                    font-size: 24px;
+                    font-weight: 400;
+                    color: $dark;
+                }
+
+                p {
+                    font-size: 16px;
+                }
+            }
+
+        }
+    }
+}
+
+/*Formulario*/
+
+#formulario {
+    margin-top: 50px;
+    padding-bottom: 80px;
+
+    .container {
+        flex-direction: column;
+
+        h2 {
+            font-size: 42px;
+            font-weight: 300;
+            text-align: center;
+            padding-bottom: 10px;
+            margin-bottom: 50px;
+            border-bottom: 1px solid $lightgrey;
+        }
+
+        form#form {
+            width: 900px;
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+
+            .input-wrapper {
+                position: relative;
+                min-height: 70px;
+                margin-bottom: 30px;
+                max-width: 100%;
+
+                @media (max-width: 600px) {
+                    margin-bottom: 10px;
+                }
+
+                .inputText {
+                    width: calc(100% - 32px);
+                    padding: 25px 15px 10px 15px;
+                    border: 1px solid #b1b1b1;
+                    border-radius: 5px;
+                    outline: none;
+                    box-shadow: none !important;
+
+                    &:focus {
+                        border-width: 1px;
+                    }
+                }
+
+                .inputText.error {
+                    border: 1px solid $danger;
+                }
+
+                select {
+                    height: 50px;
+                    width: 100%;
+                    padding-left: 10px;
+                    font-size: 15px;
+                    border: 1px solid #b1b1b1;
+                    background-color: $white;
+                    border-radius: 5px;
+                    color: $grey;
+
+                    &:focus {
+                        border: 1px solid #b1b1b1;
+                    }
+                }
+
+                select.error {
+                    border: 1px solid $danger;
+                }
+
+                input:focus~.floating-label,
+                input:not(:focus):valid~.floating-label {
+                    color: $grey;
+                    top: 5px;
+                    left: 18px;
+                    font-size: 13px;
+                    opacity: 1;
+                }
+
+                .floating-label {
+                    color: $grey;
+                    position: absolute;
+                    pointer-events: none;
+                    top: 15px;
+                    left: 18px;
+                    transition: 0.2s ease all;
+                }
+
+                span.error {
+                    margin-top: 5px;
+                    color: $danger;
+                    font-size: 11px;
+                }
+
+            }
+
+            .checkbox-wrapper {
+                display: flex;
+                align-items: center;
+                padding: 15px 0 0 0;
+
+                legend {
+                    margin-left: 10px;
+                    font-size: 16px;
+                    color: $grey;
+                }
+            }
+
+            #btnEnviar {
+                display: block;
+                margin: 20px auto 0 auto;
+                padding: 15px 50px;
+                background-color: $skyblue;
+                color: $white;
+                font-size: 18px;
+                letter-spacing: 5px;
+                border: none;
+                border-radius: 5px;
+                text-transform: uppercase;
+
+                @media (max-width: 600px) {
+                    margin-top: 0;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .col-100 {
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width: 600px) {
+            flex-direction: column;
+        }
+
+        .input-wrapper {
+            width: 48%;
+
+            @media (max-width: 600px) {
+                width: 100%;
+            }
+        }
+    }
+
+}
